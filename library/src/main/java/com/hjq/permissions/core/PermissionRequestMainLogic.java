@@ -46,11 +46,11 @@ public final class PermissionRequestMainLogic {
     private final OnPermissionCallback mCallBack;
 
     public PermissionRequestMainLogic(@NonNull Activity activity,
-                                           @NonNull List<IPermission> requestList,
-                                           @NonNull PermissionFragmentFactory<?, ?> fragmentFactory,
-                                           @NonNull OnPermissionInterceptor permissionInterceptor,
-                                           @NonNull OnPermissionDescription permissionDescription,
-                                           @Nullable OnPermissionCallback callback) {
+                                      @NonNull List<IPermission> requestList,
+                                      @NonNull PermissionFragmentFactory<?, ?> fragmentFactory,
+                                      @NonNull OnPermissionInterceptor permissionInterceptor,
+                                      @NonNull OnPermissionDescription permissionDescription,
+                                      @Nullable OnPermissionCallback callback) {
         mActivity = activity;
         mRequestList = requestList;
         mFragmentFactory = fragmentFactory;
@@ -333,27 +333,9 @@ public final class PermissionRequestMainLogic {
             return;
         }
 
-        PermissionChannel finalPermissionChannel = permissionChannel;
-        Runnable continueRequestRunnable = () ->
-            fragmentFactory.createAndCommitFragment(permissions, finalPermissionChannel, new OnPermissionFragmentCallback() {
-
-            @Override
-            public void onRequestPermissionNow() {
-                permissionDescription.onRequestPermissionStart(activity, permissions);
-            }
-
-            @Override
-            public void onRequestPermissionFinish() {
-                permissionDescription.onRequestPermissionEnd(activity, permissions);
-                finishRunnable.run();
-            }
-
-            @Override
-            public void onRequestPermissionAnomaly() {
-                permissionDescription.onRequestPermissionEnd(activity, permissions);
-            }
-        });
-
+        final PermissionChannel finalPermissionChannel = permissionChannel;
+        final OnPermissionFragmentCallback callback = new PermissionDescriptionLogic(activity, permissions, finishRunnable, permissionDescription);
+        Runnable continueRequestRunnable = () -> fragmentFactory.createAndCommitFragment(permissions, finalPermissionChannel, callback);
         permissionDescription.askWhetherRequestPermission(activity, permissions, continueRequestRunnable, finishRunnable);
     }
 
