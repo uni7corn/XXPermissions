@@ -138,10 +138,10 @@ public final class BindAccessibilityServicePermission extends SpecialPermission 
 
     @Override
     protected void checkSelfByManifestFile(@NonNull Activity activity,
-                                            @NonNull List<IPermission> requestList,
-                                            @NonNull AndroidManifestInfo manifestInfo,
-                                            @NonNull List<PermissionManifestInfo> permissionInfoList,
-                                            @Nullable PermissionManifestInfo currentPermissionInfo) {
+                                           @NonNull List<IPermission> requestList,
+                                           @NonNull AndroidManifestInfo manifestInfo,
+                                           @NonNull List<PermissionManifestInfo> permissionInfoList,
+                                           @Nullable PermissionManifestInfo currentPermissionInfo) {
         super.checkSelfByManifestFile(activity, requestList, manifestInfo, permissionInfoList, currentPermissionInfo);
 
         List<ServiceManifestInfo> serviceInfoList = manifestInfo.serviceInfoList;

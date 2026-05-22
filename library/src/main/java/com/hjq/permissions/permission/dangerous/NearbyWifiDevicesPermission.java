@@ -85,10 +85,10 @@ public final class NearbyWifiDevicesPermission extends DangerousPermission {
 
     @Override
     protected void checkSelfByManifestFile(@NonNull Activity activity,
-                                            @NonNull List<IPermission> requestList,
-                                            @NonNull AndroidManifestInfo manifestInfo,
-                                            @NonNull List<PermissionManifestInfo> permissionInfoList,
-                                            @Nullable PermissionManifestInfo currentPermissionInfo) {
+                                           @NonNull List<IPermission> requestList,
+                                           @NonNull AndroidManifestInfo manifestInfo,
+                                           @NonNull List<PermissionManifestInfo> permissionInfoList,
+                                           @Nullable PermissionManifestInfo currentPermissionInfo) {
         super.checkSelfByManifestFile(activity, requestList, manifestInfo, permissionInfoList, currentPermissionInfo);
         // 如果权限出现的版本小于 minSdkVersion，则证明该权限可能会在旧系统上面申请，需要在 AndroidManifest.xml 文件注册一下旧版权限
         if (getFromAndroidVersion(activity) > getMinSdkVersion(activity, manifestInfo)) {

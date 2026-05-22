@@ -114,10 +114,10 @@ public final class ScheduleExactAlarmPermission extends SpecialPermission {
 
     @Override
     protected void checkSelfByManifestFile(@NonNull Activity activity,
-                                            @NonNull List<IPermission> requestList,
-                                            @NonNull AndroidManifestInfo manifestInfo,
-                                            @NonNull List<PermissionManifestInfo> permissionInfoList,
-                                            @Nullable PermissionManifestInfo currentPermissionInfo) {
+                                           @NonNull List<IPermission> requestList,
+                                           @NonNull AndroidManifestInfo manifestInfo,
+                                           @NonNull List<PermissionManifestInfo> permissionInfoList,
+                                           @Nullable PermissionManifestInfo currentPermissionInfo) {
         super.checkSelfByManifestFile(activity, requestList, manifestInfo, permissionInfoList, currentPermissionInfo);
         String useExactAlarmPermissionName;
         if (PermissionVersion.isAndroid13()) {

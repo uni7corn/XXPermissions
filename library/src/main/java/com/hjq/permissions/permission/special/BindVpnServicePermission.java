@@ -101,10 +101,10 @@ public final class BindVpnServicePermission extends SpecialPermission {
 
     @Override
     protected void checkSelfByManifestFile(@NonNull Activity activity,
-                                            @NonNull List<IPermission> requestList,
-                                            @NonNull AndroidManifestInfo manifestInfo,
-                                            @NonNull List<PermissionManifestInfo> permissionInfoList,
-                                            @Nullable PermissionManifestInfo currentPermissionInfo) {
+                                           @NonNull List<IPermission> requestList,
+                                           @NonNull AndroidManifestInfo manifestInfo,
+                                           @NonNull List<PermissionManifestInfo> permissionInfoList,
+                                           @Nullable PermissionManifestInfo currentPermissionInfo) {
         super.checkSelfByManifestFile(activity, requestList, manifestInfo, permissionInfoList, currentPermissionInfo);
         // 判断有没有 Service 类注册了 android:permission="android.permission.BIND_VPN_SERVICE" 属性
         List<ServiceManifestInfo> serviceInfoList = manifestInfo.serviceInfoList;
