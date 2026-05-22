@@ -314,12 +314,12 @@ public final class PermissionLists {
     /**
      * 通知栏权限（特殊权限，只有 Android 4.4 及以上设备才能判断到权限状态，注意此权限不需要在清单文件中注册也能申请）
      *
-     * @param channelId         通知渠道 id
+     * @param notificationChannelId         通知渠道 id
      */
     @NonNull
-    public static IPermission getNotificationServicePermission(@NonNull String channelId) {
+    public static IPermission getNotificationServicePermission(@NonNull String notificationChannelId) {
         // 该对象不会纳入到缓存的集合中，这是它携带了具体的参数，只有无参的才能丢到缓存的集合中
-        return new NotificationServicePermission(channelId);
+        return new NotificationServicePermission(notificationChannelId);
     }
 
     /**

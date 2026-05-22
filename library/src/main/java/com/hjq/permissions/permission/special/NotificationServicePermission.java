@@ -48,14 +48,14 @@ public final class NotificationServicePermission extends SpecialPermission {
     };
 
     @Nullable
-    private final String mChannelId;
+    private final String mNotificationChannelId;
 
     public NotificationServicePermission() {
         this((String) null);
     }
 
-    public NotificationServicePermission(@Nullable String channelId) {
-        mChannelId = channelId;
+    public NotificationServicePermission(@Nullable String notificationChannelId) {
+        mNotificationChannelId = notificationChannelId;
     }
 
     private NotificationServicePermission(Parcel in) {
@@ -65,7 +65,7 @@ public final class NotificationServicePermission extends SpecialPermission {
     @Override
     public void writeToParcel(@NonNull Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
-        dest.writeString(mChannelId);
+        dest.writeString(mNotificationChannelId);
     }
 
     @NonNull
@@ -96,10 +96,10 @@ public final class NotificationServicePermission extends SpecialPermission {
         if (!notificationManager.areNotificationsEnabled()) {
             return false;
         }
-        if (TextUtils.isEmpty(mChannelId) || !PermissionVersion.isAndroid8()) {
+        if (TextUtils.isEmpty(mNotificationChannelId) || !PermissionVersion.isAndroid8()) {
             return true;
         }
-        NotificationChannel notificationChannel = notificationManager.getNotificationChannel(mChannelId);
+        NotificationChannel notificationChannel = notificationManager.getNotificationChannel(mNotificationChannelId);
         return notificationChannel != null && notificationChannel.getImportance() != NotificationManager.IMPORTANCE_NONE;
     }
 
@@ -116,8 +116,8 @@ public final class NotificationServicePermission extends SpecialPermission {
             NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
             NotificationChannel notificationChannel = null;
             // 虽然这个 SystemService 永远不为空，但是不怕一万，就怕万一，开展防御性编程
-            if (notificationManager != null && !TextUtils.isEmpty(mChannelId)) {
-                notificationChannel = notificationManager.getNotificationChannel(mChannelId);
+            if (notificationManager != null && !TextUtils.isEmpty(mNotificationChannelId)) {
+                notificationChannel = notificationManager.getNotificationChannel(mNotificationChannelId);
             }
             // 设置通知渠道 id 参数的前提条件有两个
             // 1. 这个通知渠道还存在
@@ -166,11 +166,6 @@ public final class NotificationServicePermission extends SpecialPermission {
         return intentList;
     }
 
-    @Nullable
-    public String getChannelId() {
-        return mChannelId;
-    }
-
     @Override
     protected void checkSelfByManifestFile(@NonNull Activity activity,
                                            @NonNull List<IPermission> requestList,
@@ -184,5 +179,10 @@ public final class NotificationServicePermission extends SpecialPermission {
             PermissionManifestInfo postNotificationsPermission = findPermissionInfoByList(permissionInfoList, PermissionNames.POST_NOTIFICATIONS);
             checkPermissionRegistrationStatus(postNotificationsPermission, PermissionNames.POST_NOTIFICATIONS, PermissionManifestInfo.DEFAULT_MAX_SDK_VERSION);
         }
+    }
+
+    @Nullable
+    public String getNotificationChannelId() {
+        return mNotificationChannelId;
     }
 }
