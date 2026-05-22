@@ -66,7 +66,7 @@ public final class ManageExternalStoragePermission extends SpecialPermission {
 
     @NonNull
     @Override
-    public List<IPermission> getOldPermissions(Context context) {
+    public List<IPermission> getOldPermissions(@NonNull Context context) {
         // Android 11 以下访问完整的文件管理需要用到读写外部存储的权限
         return PermissionUtils.asArrayList(PermissionLists.getReadExternalStoragePermission(),
                                             PermissionLists.getWriteExternalStoragePermission());

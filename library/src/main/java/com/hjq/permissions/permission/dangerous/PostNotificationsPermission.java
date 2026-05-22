@@ -59,7 +59,7 @@ public final class PostNotificationsPermission extends DangerousPermission {
 
     @NonNull
     @Override
-    public List<IPermission> getOldPermissions(Context context) {
+    public List<IPermission> getOldPermissions(@NonNull Context context) {
         // Android 13 以下开启通知栏服务，需要用到旧的通知栏权限（框架自己虚拟出来的）
         return PermissionUtils.asArrayList(PermissionLists.getNotificationServicePermission());
     }

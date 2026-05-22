@@ -60,7 +60,7 @@ public final class ReadHealthDataInBackgroundPermission extends HealthDataBasePe
 
     @Nullable
     @Override
-    public List<IPermission> getOldPermissions(Context context) {
+    public List<IPermission> getOldPermissions(@NonNull Context context) {
         if (!PermissionVersion.isAndroid14()) {
             // 这里解释一下为什么只在 Android 14 以下的版本才返回后台传感器权限，因为在 Android 14 之前，
             // Android 传感器权限本质上是为了读取心率传感器而准备的，直到 Android 14 发布将细分到健康数据权限中的读取心率权限，

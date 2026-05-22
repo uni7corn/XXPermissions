@@ -67,7 +67,7 @@ public final class ReadPhoneNumbersPermission extends DangerousPermission {
 
     @NonNull
     @Override
-    public List<IPermission> getOldPermissions(Context context) {
+    public List<IPermission> getOldPermissions(@NonNull Context context) {
         // Android 8.0 以下读取电话号码需要用到读取电话状态的权限
         return PermissionUtils.asArrayList(PermissionLists.getReadPhoneStatePermission());
     }

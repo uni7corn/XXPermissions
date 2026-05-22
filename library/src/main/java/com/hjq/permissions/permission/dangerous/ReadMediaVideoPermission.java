@@ -67,7 +67,7 @@ public final class ReadMediaVideoPermission extends DangerousPermission {
 
     @NonNull
     @Override
-    public List<IPermission> getOldPermissions(Context context) {
+    public List<IPermission> getOldPermissions(@NonNull Context context) {
         // Android 13 以下访问媒体文件需要用到读取外部存储的权限
         return PermissionUtils.asArrayList(PermissionLists.getReadExternalStoragePermission());
     }

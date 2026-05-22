@@ -58,7 +58,7 @@ public final class ReadHealthRatePermission extends HealthDataBasePermission {
     }
 
     @Override
-    public List<IPermission> getOldPermissions(Context context) {
+    public List<IPermission> getOldPermissions(@NonNull Context context) {
         return PermissionUtils.asArrayList(PermissionLists.getBodySensorsPermission());
     }
 
