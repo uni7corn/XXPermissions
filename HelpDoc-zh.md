@@ -167,7 +167,7 @@ XXPermissions.with(this)
     .request(new OnPermissionCallback() {
 
         @Override
-        public void onResult(@NonNull List<IPermission> grantedList, @NonNull List<IPermission> deniedList) {
+        public void onPermissionResult(@NonNull List<IPermission> grantedList, @NonNull List<IPermission> deniedList) {
             boolean allGranted = deniedList.isEmpty();
             if (!allGranted) {
                 IPermission recordAudioPermission = PermissionLists.getRecordAudioPermission();
@@ -219,7 +219,7 @@ public class PermissionActivity extends AppCompatActivity implements OnPermissio
     }
 
     @Override
-    public void onResult(@NonNull List<IPermission> grantedList, @NonNull List<IPermission> deniedList) {
+    public void onPermissionResult(@NonNull List<IPermission> grantedList, @NonNull List<IPermission> deniedList) {
         boolean allGranted = deniedList.isEmpty();
         if (!allGranted) {
             boolean doNotAskAgain = XXPermissions.isDoNotAskAgainPermissions(activity, deniedList);

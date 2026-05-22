@@ -641,6 +641,6 @@ public final class XXPermissions {
                 deniedList.add(permission);
             }
         }
-        callback.onResult(grantedList, deniedList);
+        callback.onPermissionResult(grantedList, deniedList);
     }
 }

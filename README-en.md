@@ -123,7 +123,7 @@ XXPermissions.with(this)
     .request(new OnPermissionCallback() {
 
         @Override
-        public void onResult(@NonNull List<IPermission> grantedList, @NonNull List<IPermission> deniedList) {
+        public void onPermissionResult(@NonNull List<IPermission> grantedList, @NonNull List<IPermission> deniedList) {
             boolean allGranted = deniedList.isEmpty();
             if (!allGranted) {
                 // Determine whether the permissions that failed requests have been checked by the user to no longer ask

@@ -18,5 +18,5 @@ public interface OnPermissionCallback {
      * @param grantedList               授予权限列表
      * @param deniedList                拒绝权限列表
      */
-    void onResult(@NonNull List<IPermission> grantedList, @NonNull List<IPermission> deniedList);
+    void onPermissionResult(@NonNull List<IPermission> grantedList, @NonNull List<IPermission> deniedList);
 }

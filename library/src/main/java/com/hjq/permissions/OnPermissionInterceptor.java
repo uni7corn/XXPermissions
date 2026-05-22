@@ -48,7 +48,7 @@ public interface OnPermissionInterceptor {
         if (callback == null) {
             return;
         }
-        callback.onResult(grantedList, deniedList);
+        callback.onPermissionResult(grantedList, deniedList);
     }
 
     /**

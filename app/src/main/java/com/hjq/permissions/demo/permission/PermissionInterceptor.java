@@ -40,7 +40,7 @@ public final class PermissionInterceptor implements OnPermissionInterceptor {
                                        @NonNull List<IPermission> deniedList,
                                        @Nullable OnPermissionCallback callback) {
         if (callback != null) {
-            callback.onResult(grantedList, deniedList);
+            callback.onPermissionResult(grantedList, deniedList);
         }
 
         if (deniedList.isEmpty()) {
@@ -74,7 +74,7 @@ public final class PermissionInterceptor implements OnPermissionInterceptor {
             XXPermissions.startPermissionActivity(activity, deniedList, new OnPermissionCallback() {
 
                 @Override
-                public void onResult(@NonNull List<IPermission> grantedList, @NonNull List<IPermission> deniedList) {
+                public void onPermissionResult(@NonNull List<IPermission> grantedList, @NonNull List<IPermission> deniedList) {
                     List<IPermission> latestDeniedList = XXPermissions.getDeniedPermissions(activity, requestList);
                     boolean allGranted = latestDeniedList.isEmpty();
                     if (!allGranted) {
@@ -88,7 +88,7 @@ public final class PermissionInterceptor implements OnPermissionInterceptor {
                         return;
                     }
                     // 用户全部授权了，回调成功给外层监听器，免得用户还要再发起权限申请
-                    callback.onResult(requestList, latestDeniedList);
+                    callback.onPermissionResult(requestList, latestDeniedList);
                 }
             });
         };
