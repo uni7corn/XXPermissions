@@ -299,6 +299,12 @@ XXPermissions.setCheckMode(boolean checkMode);
 
 * 自动检测错误：如果出现错误框架会主动抛出异常给调用者（仅在 Debug 下判断，把 Bug 扼杀在摇篮中）
 
+#### 使用案例
+
+![](picture/case/yuanbao_logo.png)
+
+[![](picture/case/yuanbao_open_source_agreement.png)](https://zhuanhuabao-5gqf84946751a1cb-1300912497.tcloudbaseapp.com/Attribution_android.html?sign=0c83e603269fbf16104d390b1e19f4d2&t=1710318214&app_lang=zh-CN&app_status_bar_height=87)
+
 #### 作者的其他开源项目
 
 * 安卓技术中台：[AndroidProject](https://github.com/getActivity/AndroidProject) ![](https://img.shields.io/github/stars/getActivity/AndroidProject.svg) ![](https://img.shields.io/github/forks/getActivity/AndroidProject.svg)
