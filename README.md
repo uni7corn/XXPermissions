@@ -226,10 +226,10 @@ XXPermissions.startPermissionActivity(@NonNull androidx.fragment.app.Fragment xF
 XXPermissions.startPermissionActivity(@NonNull androidx.fragment.app.Fragment xFragment, @NonNull List<IPermission> permissions, @Nullable OnPermissionCallback callback);
 
 // 设置权限描述器（全局设置）
-XXPermissions.setPermissionDescription(Class<? extends OnPermissionDescription> clazz);
+XXPermissions.setPermissionDescriptionClass(Class<? extends OnPermissionDescription> clazz);
 
 // 设置权限申请拦截器（全局设置）
-XXPermissions.setPermissionInterceptor(Class<? extends OnPermissionInterceptor> clazz);
+XXPermissions.setPermissionInterceptorClass(Class<? extends OnPermissionInterceptor> clazz);
 
 // 设置是否开启错误检测模式（全局设置）
 XXPermissions.setCheckMode(boolean checkMode);

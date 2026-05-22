@@ -142,9 +142,9 @@ public class XxxApplication extends Application {
         super.onCreate();
         
         // Set permission request description (global setting)
-        XXPermissions.setPermissionDescription(PermissionDescription.class);
+        XXPermissions.setPermissionDescriptionClass(PermissionDescription.class);
         // Set permission request interceptor (global setting)
-        XXPermissions.setPermissionInterceptor(PermissionInterceptor.class);
+        XXPermissions.setPermissionInterceptorClass(PermissionInterceptor.class);
     }
 }
 ```

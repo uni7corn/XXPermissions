@@ -225,10 +225,10 @@ XXPermissions.startPermissionActivity(@NonNull androidx.fragment.app.Fragment xF
 XXPermissions.startPermissionActivity(@NonNull androidx.fragment.app.Fragment xFragment, @NonNull List<IPermission> permissions, @Nullable OnPermissionCallback callback);
 
 // Set the permission description provider (Global setting)
-XXPermissions.setPermissionDescription(Class<? extends OnPermissionDescription> clazz);
+XXPermissions.setPermissionDescriptionClass(Class<? extends OnPermissionDescription> clazz);
 
 // Set the permission request interceptor (Global setting)
-XXPermissions.setPermissionInterceptor(Class<? extends OnPermissionInterceptor> clazz);
+XXPermissions.setPermissionInterceptorClass(Class<? extends OnPermissionInterceptor> clazz);
 
 // Set whether to enable error detection mode (Global setting)
 XXPermissions.setCheckMode(boolean checkMode);

@@ -69,7 +69,7 @@ public final class XXPermissions {
     /**
      * 设置权限申请拦截器（全局设置）
      */
-    public static void setPermissionInterceptor(Class<? extends OnPermissionInterceptor> clazz) {
+    public static void setPermissionInterceptorClass(Class<? extends OnPermissionInterceptor> clazz) {
         sPermissionInterceptorClass = clazz;
     }
 
@@ -94,7 +94,7 @@ public final class XXPermissions {
      * 这里解释一下，为什么不开放普通对象，而是只开放 Class 对象，这是因为如果用普通对象，那么就会导致全局都复用这一个对象
      * 而这个会带来一个后果，就是可能出现类内部字段的使用冲突，为了避免这一个问题，最好的解决方案是不去复用同一个对象
      */
-    public static void setPermissionDescription(Class<? extends OnPermissionDescription> clazz) {
+    public static void setPermissionDescriptionClass(Class<? extends OnPermissionDescription> clazz) {
         sPermissionDescriptionClass = clazz;
     }
 
