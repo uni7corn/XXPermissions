@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 @SuppressWarnings("AlibabaLowerCamelCaseVariableNaming")
 public final class PermissionVersion {
 
+    public static final int ANDROID_17 = 37;
     public static final int ANDROID_16 = Build.VERSION_CODES.BAKLAVA;
     public static final int ANDROID_15 = Build.VERSION_CODES.VANILLA_ICE_CREAM;
     public static final int ANDROID_14 = Build.VERSION_CODES.UPSIDE_DOWN_CAKE;
@@ -58,6 +59,13 @@ public final class PermissionVersion {
      */
     public static int getTargetSdkVersion(@NonNull Context context) {
         return context.getApplicationInfo().targetSdkVersion;
+    }
+
+    /**
+     * 是否是 Android 17 及以上版本
+     */
+    public static boolean isAndroid17() {
+        return Build.VERSION.SDK_INT >= ANDROID_17;
     }
 
     /**

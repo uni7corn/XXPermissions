@@ -2,10 +2,10 @@
 android {
 
     // 编译源码版本
-    compileSdk 36
+    compileSdk 37
     defaultConfig {
         // Android 版本适配指南：https://github.com/getActivity/AndroidVersionAdapter
-        targetSdk 36
+        targetSdk 37
         versionCode 2820
         versionName "28.2"
     }

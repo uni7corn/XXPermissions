@@ -47,6 +47,11 @@
 
     <!--                                              我是一条华丽的分割线                                              -->
 
+    <!-- 访问局域网权限（Android 17.0 新增的权限）-->
+    <uses-permission android:name="android.permission.ACCESS_LOCAL_NETWORK" />
+    <!-- 访问局域网权限在旧版本下需要注册网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <!-- 授予对照片和视频的部分访问权限（Android 14.0 新增的权限）-->
     <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
 

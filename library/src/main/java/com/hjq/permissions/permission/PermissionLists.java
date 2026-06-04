@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.collection.LruCache;
 import com.hjq.permissions.permission.base.IPermission;
 import com.hjq.permissions.permission.dangerous.AccessBackgroundLocationPermission;
+import com.hjq.permissions.permission.dangerous.AccessLocalNetworkPermission;
 import com.hjq.permissions.permission.dangerous.AccessMediaLocationPermission;
 import com.hjq.permissions.permission.dangerous.BluetoothAdvertisePermission;
 import com.hjq.permissions.permission.dangerous.BluetoothConnectPermission;
@@ -364,6 +365,18 @@ public final class PermissionLists {
     }
 
     /* ------------------------------------ 我是一条华丽的分割线 ------------------------------------ */
+
+    /**
+     * 访问局域网权限（Android 17.0 新增的权限）
+     */
+    @NonNull
+    public static IPermission getAccessLocalNetworkPermission() {
+        IPermission permission = getCachePermission(AccessLocalNetworkPermission.PERMISSION_NAME);
+        if (permission != null) {
+            return permission;
+        }
+        return putCachePermission(new AccessLocalNetworkPermission());
+    }
 
     /**
      * 访问部分照片和视频的权限（Android 14.0 新增的权限）

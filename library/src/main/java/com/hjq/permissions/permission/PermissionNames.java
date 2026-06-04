@@ -97,6 +97,11 @@ public final class PermissionNames {
     /* ------------------------------------ 我是一条华丽的分割线 ------------------------------------ */
 
     /**
+     * 访问局域网权限字符串常量，如需权限对象请调用 {@link PermissionLists#getAccessLocalNetworkPermission()} 获取
+     */
+    public static final String ACCESS_LOCAL_NETWORK = "android.permission.ACCESS_LOCAL_NETWORK";
+
+    /**
      * 访问部分照片和视频的权限字符串常量，如需权限对象请调用 {@link PermissionLists#getReadMediaVisualUserSelectedPermission()} 获取
      */
     public static final String READ_MEDIA_VISUAL_USER_SELECTED = "android.permission.READ_MEDIA_VISUAL_USER_SELECTED";

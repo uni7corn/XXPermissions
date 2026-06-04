@@ -29,6 +29,7 @@
     <string name="demo_request_activity_recognition_permission">Request activity recognition permission</string>
     <string name="demo_request_bluetooth_permission">Request bluetooth permission</string>
     <string name="demo_request_wifi_permission">Request wifi permission</string>
+    <string name="demo_request_access_local_network_permission">Request access local network permission</string>
     <string name="demo_request_access_media_location_information_permission">Request access media location information permission</string>
     <string name="demo_request_read_media_permission">Request media read permission</string>
     <string name="demo_request_all_file_access_permission">Request all file access permission</string>
